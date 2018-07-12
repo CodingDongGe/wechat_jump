@@ -45,7 +45,11 @@ public class ADBcommand {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * 模拟按压事件
+	 * @param time 按压时间
+	 */
 	public static void press(int time) {
 		Process process;
 		try {
@@ -61,3 +65,4 @@ public class ADBcommand {
 		}
 	}
 }
+
