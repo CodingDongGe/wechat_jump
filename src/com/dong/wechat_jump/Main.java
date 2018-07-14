@@ -2,6 +2,7 @@ package com.dong.wechat_jump;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.URLDecoder;
 import java.util.Random;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
@@ -13,12 +14,13 @@ import org.omg.CORBA.PRIVATE_MEMBER;
  * @Date 2018年1月6日
  */
 public class Main {
-	public static void main(String[] strings) {
+	public static void main(String[] strings) throws Exception{
 
 		final double JUMP_RATIO = 1.390f; // 弹跳系数
 		Random random = new Random();
 
 		String appRoot = Main.class.getResource("/").getPath() + "temp_images/input"; // 获取Main.class所在的顶级目录
+		appRoot=URLDecoder.decode(appRoot, "UTF-8");
 		System.out.println("screenshot save path is " + appRoot);
 
 		MyPositionFinder myPositionFinder = new MyPositionFinder();
